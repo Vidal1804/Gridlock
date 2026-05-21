@@ -10,10 +10,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     switch($action){
         case 'login':
             header("Location: /login");
-            break;
+            exit();
         case 'register':
             header("Location: /register");
-            break;
+            exit();
         default:
             http_response_code(400);
             exit();
