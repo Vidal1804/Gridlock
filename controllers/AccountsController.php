@@ -1,7 +1,7 @@
 <?php
 
-require_once '../models/AccountsModel.php';
-require_once '../config/db.php';
+require_once __DIR__ . '../models/AccountsModel.php';
+require_once __DIR__ . '../config/db.php';
 
 if(session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -30,4 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: ../views/AccountsView.php?error=missing_fields");
         exit();
     }
+}
+
+if($_SERVER['REQUEST_METHOD'] === 'GET') {
+    if(isset($_SESSION['user_id'])){
+        header("Location: /home");
+        exit();
+    }
+
+    require_once __DIR__ . '/../views/AccountsView.php';
+    exit();
 }
