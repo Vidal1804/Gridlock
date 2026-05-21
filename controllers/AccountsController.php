@@ -20,14 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
 
-            header("Location: ../views/home.php");
+            header("Location: /home");
             exit();
         } else {
-            header("Location: ../views/AccountsView.php?error=invalid_credentials");
+            header("Location: /login?error=invalid_credentials");
             exit();
         }
     } else {
-        header("Location: ../views/AccountsView.php?error=missing_fields");
+        header("Location: /login?error=missing_fields");
         exit();
     }
 }
