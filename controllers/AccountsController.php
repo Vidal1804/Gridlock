@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . '../models/AccountsModel.php';
-require_once __DIR__ . '../config/db.php';
+require_once __DIR__ . '/../models/AccountsModel.php';
+require_once __DIR__ . '/../config/db.php';
 
 if(session_status() === PHP_SESSION_NONE) {
     session_start();
