@@ -23,7 +23,7 @@ switch ($cleanPath) {
         break;
 
     case '/logout':
-        require_once __DIR__ . 'controllers/LogoutController.php';
+        require_once __DIR__ . '/controllers/LogoutController.php';
         break;
 
     default:
