@@ -19,12 +19,19 @@ switch ($cleanPath) {
         break;
 
     case '/login':
-        require_once __DIR__ . '/controllers/AccountsController.php';
+        require_once __DIR__ . '/controllers/LoginController.php';
         break;
 
     case '/logout':
         require_once __DIR__ . '/controllers/LogoutController.php';
         break;
+    
+    case '/register':
+        require_once __DIR__ . '/controllers/RegisterController.php';
+        break;
+
+    case '/start':
+        require_once __DIR__ . '/controllers/StartController.php';
 
     default:
         http_response_code(404);

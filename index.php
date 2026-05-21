@@ -1,4 +1,4 @@
 <?php
-header("Location: views/AccountsView.php");
+header("Location: /start");
 exit;
 ?>

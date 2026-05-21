@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <head>
     <title>Login</title>
     <link rel="icon" href="../favicon.ico">
@@ -13,5 +14,5 @@
         <input type="submit" name="Submit" value="Login">
     </form>
 
-    <?php if(isset($_GET['error'])) echo "<h3>" . htmlspecialchars($_GET['error']) . "</h3>"; ?>
+    <?php if(isset($_GET['error'])) echo "<h3>" . htmlspecialchars($_GET['error'], ENT_QUOTES, 'UTF-8') . "</h3>"; ?>
 </body>

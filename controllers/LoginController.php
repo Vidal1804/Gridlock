@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if(!empty($name) && !empty($pass)) {
         $model = new AccountsModel($pdo);
-        $user = $model->findUserByUsername($name);
+        $user = $model->loginFindUserByUsername($name);
 
         if($user && password_verify($pass, $user['password_hash'])) {
             session_regenerate_id(true);
