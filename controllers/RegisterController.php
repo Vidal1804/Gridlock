@@ -12,6 +12,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
-    require_once '/../views/RegisterView.php';
+    require_once __DIR__ . '/../views/RegisterView.php';
     exit();
 }
