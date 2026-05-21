@@ -5,12 +5,10 @@
 </head>
 <body>
     <h1>Welcome to Gridlock!</h1>
-    <form method="POST" action="/start">
-        <input type="hidden" name="action" value="login">
-        <button type="submit">Login</button>
-    </form>
-    <form method="POST" action="/start">
-        <input type="hidden" name="action" value="register">
-        <button type="submit">Register</button>
-    </form>
+    <a href="/login" style="display: inline-block; padding: 8px 12px; background: #ccc; text-decoration: none; color: black; border-radius: 4px;">
+        Login
+    </a>
+    <a href="/register" style="display: inline-block; padding: 8px 12px; background: #ccc; text-decoration: none; color: black; border-radius: 4px;">
+        Register
+    </a>
 </body>
