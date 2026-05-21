@@ -6,7 +6,7 @@
     
     <form style="display:flex; flex-direction: column; max-width: 300px; gap: 10px" 
           method="post" 
-          action="../controllers/AccountsController.php">
+          action="/login">
         
         Name: <input type="text" name="username">
         Password: <input type="password" name="password">

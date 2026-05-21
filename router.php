@@ -22,6 +22,10 @@ switch ($cleanPath) {
         require_once __DIR__ . '/controllers/AccountsController.php';
         break;
 
+    case '/logout':
+        require_once __DIR__ . 'controllers/LogoutController.php';
+        break;
+
     default:
         http_response_code(404);
         echo "<h1>404 Not Found</h1>";
