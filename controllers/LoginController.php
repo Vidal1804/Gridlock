@@ -8,6 +8,8 @@ if(session_status() === PHP_SESSION_NONE) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
+
     $name = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS) ?? '';
     $pass = $_POST['password'] ?? '';
 
