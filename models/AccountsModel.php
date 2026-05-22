@@ -19,4 +19,9 @@ class AccountsModel {
         $stmt->execute(['username' => $username]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function registerUser($username, $email, $password_hash){
+        $stmt = $this->pdo->prepare("INSERT INTO users (username, email, password_hash) VALUES (:username, :email, :password_hash)");
+        return $stmt->execute(['username' => $username, 'email' => $email, 'password_hash' => $password_hash]);
+    }
 }
