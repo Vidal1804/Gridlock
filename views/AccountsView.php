@@ -1,22 +1,28 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Login</title>
     <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="/styles.css">
 </head>
-<body style="display: flex; justify-content: center; align-items: center; margin: 0; min-height: 100vh; flex-direction: column; gap: 10px">
-    
-    <form style="display:flex; flex-direction: column; max-width: 300px; gap: 10px" 
-          method="post" 
-          action="/login">
-        
-        Name: <input type="text" name="username">
-        Password: <input type="password" name="password">
-        <input type="submit" name="Submit" value="Login">
-    </form>
+<body>
 
-    <a href="/start" style="display: inline-block; padding: 8px 12px; background: #ccc; text-decoration: none; color: black; border-radius: 4px;">
-    Return
-    </a>
+    <div class="auth-container">
+        <div class="auth-card">
+            
+            <form method="post" action="/login">
+                Name: <input type="text" name="username">
+                Password: <input type="password" name="password">
+                <input type="submit" name="Submit" value="Login" class="nav-btn primary-btn full-width">
+            </form>
 
-    <?php if(isset($_GET['error'])) echo "<h3>" . htmlspecialchars($_GET['error'], ENT_QUOTES, 'UTF-8') . "</h3>"; ?>
+            <a href="/start" class="back-link">Return</a>
+
+            <?php if(isset($_GET['error'])) echo "<h3>" . htmlspecialchars($_GET['error'], ENT_QUOTES, 'UTF-8') . "</h3>"; ?>
+            
+        </div>
+    </div>
+
 </body>
+</html>

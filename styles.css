@@ -1,0 +1,132 @@
+:root {
+  --bg-light: #f8fafc;
+  --text-main: #0f172a;
+  --text-subtle: #64748b; /* Gri puțin mai închis, se vede mai bine */
+  --accent-color: #ef4444;
+  --btn-bg: #1e293b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navigarea */
+.top-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: var(--text-main);
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    
+}
+
+.nav-btn:hover {
+    background-color: var(--accent-color);
+    color: #ffffff; /* Text alb pe roșu */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.primary-btn {
+    background-color: var(--btn-bg);
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+/* Secțiunea principală */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.info-title {
+    font-size: 4.5rem;
+    margin: 0 0 15px 0;
+    letter-spacing: 2px;
+    color: var(--text-main);
+}
+
+.info-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-subtle); 
+    max-width: 600px;
+    margin: 0;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+input[type="text"], 
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+
+.error-msg {
+    color: var(--accent-color);
+    text-align: center;
+    margin-top: 15px;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: var(--text-subtle);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.full-width {
+    width: 100%;
+}
