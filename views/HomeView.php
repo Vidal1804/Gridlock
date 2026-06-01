@@ -27,6 +27,10 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
     <main class="info-section">
         <h1 class="info-title">Welcome, <?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8');?>!</h1>
         <p class="info-subtitle">Here you can view the accident map and traffic analysis.</p>
+        <div style="margin-top: 20px; gap: 10px; display: flex">
+            <a href="/dashboard"><button class="nav-btn primary-btn">Dashboard</button></a>
+            <a href="/dashboard"><button class="nav-btn primary-btn">All Accidents</button></a>
+        </div>
     </main>
 
 </body>
