@@ -6,7 +6,7 @@ if(session_status() === PHP_SESSION_NONE) {
 
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
     if(!isset($_SESSION['user_id'])){
-        header("Location: /login");
+        header("Location: /start");
         exit();
     }
     require_once __DIR__ . '/../views/HomeView.php';
