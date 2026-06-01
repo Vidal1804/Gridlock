@@ -136,29 +136,29 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
 
         <section class="display-panel">
             <div class="visual-card map-card">
-                <h3>Geographic Map Representation</h3>
+                <h3>Geographic Map</h3>
                 <div id="accident-map" class="placeholder-box">
-                    <p class="info-subtitle">Interactive map rendering service loaded here</p>
+                    <p class="info-subtitle">map work in progress</p>
                 </div>
             </div>
 
             <div class="stats-grid">
                 <div class="visual-card">
-                    <h3>Format 1: Timeline Analysis</h3>
+                    <h3>Timeline Analysis</h3>
                     <div id="chart-timeline" class="placeholder-box">
-                        <p class="info-subtitle">Chart visualization (e.g., SVG-based Bar Chart)</p>
+                        <p class="info-subtitle">chart 1 wip</p>
                     </div>
                 </div>
                 <div class="visual-card">
-                    <h3>Format 2: Distribution by State</h3>
+                    <h3>Distribution by State</h3>
                     <div id="chart-pie" class="placeholder-box">
-                        <p class="info-subtitle">Chart visualization (e.g., Donut Chart)</p>
+                        <p class="info-subtitle">chart 2 wip</p>
                     </div>
                 </div>
                 <div class="visual-card">
-                    <h3>Format 3: Metric Matrix</h3>
+                    <h3>Metric Matrix</h3>
                     <div id="chart-matrix" class="placeholder-box">
-                        <p class="info-subtitle">Data visualization grid / Heatmap table</p>
+                        <p class="info-subtitle">chart 3 wip</p>
                     </div>
                 </div>
             </div>
