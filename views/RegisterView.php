@@ -15,6 +15,7 @@
                 Name: <input type="text" name="username">
                 Email: <input type="email" name="email">
                 Password: <input type="password" name="password">
+                Confirm Password: <input type="password" name="confirm_pass">
                 <input type="submit" name="Submit" value="Sign up" class="nav-btn primary-btn full-width">
             </form>
 
