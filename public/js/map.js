@@ -5,6 +5,6 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-L.marker([[40.775, -73.972]]).addTo(map)
+L.marker([40.775, -73.972]).addTo(map)
     .bindPopup('merge mapa')
     .openPopup();
