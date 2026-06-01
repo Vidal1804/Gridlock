@@ -9,7 +9,7 @@
             session_destroy();
         }
         
-        header("Location: /login");
+        header("Location: /start");
         exit();
     }
     
