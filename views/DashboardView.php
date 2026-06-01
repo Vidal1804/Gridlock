@@ -115,10 +115,11 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
                     <select id="search-weather" name="weather">
                         <option value="">Any weather</option>
                         <option value="1">Clear</option>
-                        <option value="2">Light Rain</option>
-                        <option value="3">Heavy Rain</option>
-                        <option value="4">Fog</option>
-                        <option value="5">Thunderstorm</option>
+                        <option value="2">Cloudy</option>
+                        <option value="3">Rain</option>
+                        <option value="4">Snow</option>
+                        <option value="5">Fog</option>
+                        <option value="6">Severe Storm</option>
                     </select>
                 </div>
 
