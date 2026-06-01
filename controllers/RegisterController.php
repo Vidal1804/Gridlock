@@ -18,8 +18,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $user = $model->findUserByUsername($name);
         if(!$user){
             $hashedPass = password_hash($pass, PASSWORD_DEFAULT);
-            $hashedConfirm = password_hash($confirm_pass, PASSWORD_DEFAULT);
-            if($hashedPass != $hashedConfirm){
+            if($pass != $confirm_pass){
                 header("Location: /register?error=passwords_dont_match");
                 exit();
             }
