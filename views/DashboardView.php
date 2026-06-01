@@ -12,7 +12,8 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
     <meta charset="UTF-8">
     <title>Dashboard - Gridlock</title>
     <link rel="icon" href="../favicon.ico">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body class="dashboard-page">
 
@@ -137,9 +138,9 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
         <section class="display-panel">
             <div class="visual-card map-card">
                 <h3>Geographic Map</h3>
-                <div id="accident-map" class="placeholder-box">
-                    <p class="info-subtitle">map work in progress</p>
-                </div>
+                <div id="map"></div>
+                <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+                <script src="/public/js/map.js"></script>
             </div>
 
             <div class="stats-grid">

@@ -12,7 +12,8 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
     <meta charset="UTF-8">
     <title>Home - Gridlock</title>
     <link rel="icon" href="../favicon.ico">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/public/css/styles.css">
+    
 </head>
 <body>
 

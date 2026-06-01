@@ -274,3 +274,8 @@ input[type="password"] {
     min-height: 180px;
     text-align: center;
 }
+
+#map {
+    height: 500px;
+    width: 100%;
+}
