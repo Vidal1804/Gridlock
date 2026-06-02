@@ -114,12 +114,12 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
                     <label for="search-weather">Weather Condition</label>
                     <select id="search-weather" name="weather">
                         <option value="">Any weather</option>
-                        <option value="1">Clear</option>
-                        <option value="2">Cloudy</option>
-                        <option value="3">Rain</option>
-                        <option value="4">Snow</option>
-                        <option value="5">Fog</option>
-                        <option value="6">Severe Storm</option>
+                        <option value="Clear">Clear</option>
+                        <option value="Cloudy">Cloudy</option>
+                        <option value="Rain">Rain</option>
+                        <option value="Snow">Snow</option>
+                        <option value="Fog">Fog</option>
+                        <option value="Severe Storm">Severe Storm</option>
                     </select>
                 </div>
 

@@ -37,6 +37,10 @@ switch ($cleanPath) {
     case '/dashboard':
         require_once __DIR__ . '/controllers/DashboardController.php';
         break;
+        
+    case '/api/accidents':
+        require_once __DIR__ . '/controllers/AccidentsController.php';
+        break;    
 
     default:
         http_response_code(404);
