@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/public/css/styles.css">
 </head>
 <body>
-
     <div class="auth-container">
         <div class="auth-card">
             
