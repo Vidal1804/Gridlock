@@ -43,7 +43,14 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
                 <hr>
 
                 
-                <h3>Multi-Criteria Search</h3>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+                    <h3 style="margin: 0;">Multi-Criteria Search</h3>
+                    <label class="switch">
+                        <input type="checkbox" id="switch-mcs">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div id="advanced-form" class="hidden-box hide">
                 <div class="form-group">
                     <label for="search-state">State</label>
                     <select id="search-state" name="state">
@@ -122,18 +129,26 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
                         <option value="Severe Storm">Severe Storm</option>
                     </select>
                 </div>
+                </div>
 
                 <button type="submit" class="nav-btn primary-btn full-width">Apply Filters</button>
             </form>
 
             <hr>
 
-            <h3>Export Options</h3>
-            <div class="export-actions">
-                <button type="button" id="export-csv" class="nav-btn full-width">Export CSV</button>
-                <button type="button" id="export-webp" class="nav-btn full-width">Export WebP</button>
-                <button type="button" id="export-svg" class="nav-btn full-width">Export SVG</button>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+                    <h3 style="margin: 0;">Export Options</h3>
+                    <label class="switch">
+                        <input type="checkbox" id="switch-export">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            <div id="export-container" class="hidden-box hide">
+                <button style="margin-bottom: 10px" type="button" id="export-csv" class="nav-btn primary-btn full-width">Export CSV</button>
+                <button style="margin-bottom: 10px" type="button" id="export-webp" class="nav-btn primary-btn full-width">Export WebP</button>
+                <button style="margin-bottom: 10px" type="button" id="export-svg" class="nav-btn primary-btn full-width">Export SVG</button>
             </div>
+
         </aside>
 
         <section class="display-panel">
@@ -167,5 +182,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
         </section>
     </main>
 
+
+    <script src="/public/js/dashboard-toggle.js"></script>
 </body>
 </html>
