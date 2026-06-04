@@ -46,6 +46,19 @@ body.light-mode {
     gap: 15px;
 }
 
+.footer-style {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+}
+
 .nav-btn {
     text-decoration: none;
     color: var(--text-main);
@@ -169,7 +182,7 @@ input[type="password"] {
     border-bottom: 1px solid var(--border-color);
     padding: 15px 40px;
     align-items: center;
-    z-index: 100;
+    z-index: 1001;
 }
 
 .dashboard-page .nav-user {
