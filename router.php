@@ -40,7 +40,11 @@ switch ($cleanPath) {
         
     case '/api/accidents':
         require_once __DIR__ . '/controllers/AccidentsController.php';
-        break;    
+        break;   
+        
+    case '/admin':
+        require_once __DIR__ . '/controllers/AdminController.php';
+        break;
 
     default:
         http_response_code(404);
