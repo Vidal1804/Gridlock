@@ -8,7 +8,7 @@ class AccountsModel {
 
     // used for the login page to get password_hash
     public function loginFindUserByUsername($username) {
-        $stmt = $this->pdo->prepare("SELECT id, username, password_hash FROM users WHERE username = :username LIMIT 1");
+        $stmt = $this->pdo->prepare("SELECT id, username, password_hash, role FROM users WHERE username = :username LIMIT 1");
         $stmt->execute(['username' => $username]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
@@ -18,6 +18,12 @@ class AccountsModel {
         $stmt = $this->pdo->prepare("SELECT * FROM safe_accounts WHERE username = :username LIMIT 1");
         $stmt->execute(['username' => $username]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function getAllUsers(){
+        $stmt = $this->pdo->prepare("SELECT * FROM safe_accounts");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function registerUser($username, $email, $password_hash){

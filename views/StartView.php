@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Start - Gridlock</title>
-    <link rel="icon" href="../favicon.ico">
+    <link rel="icon" href="/public/resources/favicon.ico">
     <link rel="stylesheet" href="/public/css/styles.css">
 </head>
 <body>
