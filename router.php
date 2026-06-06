@@ -50,6 +50,10 @@ switch ($cleanPath) {
         require_once __DIR__ . '/controllers/AdminController.php';
         break;
 
+    case '/attributes':
+        require_once __DIR__ . '/views/Attributions.php';
+        break;
+
     default:
         http_response_code(404);
         require_once __DIR__ . '/views/NotFound.php';

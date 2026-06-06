@@ -7,6 +7,7 @@
   --card-bg: #1e1e1e;
   --border-color: #2e2e2e;
   --text-box-color: #242424;
+  --secondary-accent: #D7E3E2;
 }
 
 
@@ -174,6 +175,7 @@ input[type="password"] {
 
 .nav-bar-div {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
 }
@@ -410,6 +412,51 @@ input:checked + .slider:before { transform: translateX(22px); }
     display: block
 }
 
+.attribute-container {
+    margin: 40px;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border: solid 2px var(--border-color);
+    max-width: 100%;
+    min-height: 20vh;
+}
+
+.nav-buttons {
+        margin-left: 5px;
+}
+
+.nav-button-container {
+    display: flex; 
+    align-items: center; 
+    text-decoration: none; 
+    width: auto;
+    border: none 1px var(--secondary-accent); 
+    padding: 7px; border-radius: 15px;
+}
+
+.nav-text{
+    color: var(--text-main);
+    border: none;
+    font-size: 16px;
+}
+
+.nav-button-container .nav-text {
+    opacity: 0;
+    max-width: 0;
+    transition: all 0.3s ease-in-out;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.nav-button-container:hover .nav-text {
+    max-width: 100px;
+    opacity: 1;
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
 
 /* Phone version !!! */
 
@@ -438,9 +485,13 @@ input:checked + .slider:before { transform: translateX(22px); }
     }
 
     .nav-bar-div {
-        flex-direction: column;
+        justify-content: center;
     }
     
+    .nav-buttons {
+        margin-left: 0px;
+    }
+
     .control-panel {
         width: 100%; 
         height: auto;
