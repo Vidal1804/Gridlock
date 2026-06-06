@@ -199,6 +199,8 @@ input[type="password"] {
     height: 100%;
     background-color: var(--card-bg);
     border-radius: 30px;
+    padding: 15px 20px;
+    box-sizing: border-box;
 }
 
 
@@ -366,4 +368,79 @@ input:checked + .slider:before { transform: translateX(22px); }
     max-height: 0;
     opacity: 0;
     overflow: hidden;
+}
+
+
+/* Phone version !!! */
+
+@media (max-width: 992px) {
+    
+    .dashboard-container {
+        flex-direction: column; 
+    }
+    
+    .control-panel {
+        width: 100%; 
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .display-panel {
+        width: 100%; 
+    }
+
+    #map {
+        height: 350px; 
+    }
+    
+    .map-card {
+        min-height: 350px;
+    }
+
+    .info-title {
+        font-size: 2.5rem; 
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .top-nav, 
+    .dashboard-page .top-nav, 
+    .footer-style {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+    
+    .auth-card {
+        padding: 25px 20px;
+        width: 90%; 
+        max-width: none;
+    }
+   
+    .dashboard-page .top-nav {
+        padding: 8px 10px;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .dashboard-page .nav-user {
+        margin-right: 0; 
+        width: 100%; 
+        text-align: center; 
+        font-size: 1.3rem; 
+        margin-bottom: 2px;
+        
+    }
+
+    .top-nav .nav-btn, 
+    .footer-style .nav-btn {
+        flex: 1;
+        padding: 6px 4px;
+        font-size: 0.75rem; 
+        text-align: center;
+        white-space: nowrap; 
+        margin: 0;
+    }
 }

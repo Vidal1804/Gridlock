@@ -7,7 +7,7 @@ class AccidentsModel {
     }
 
     public function SimpleAccidentQuery($startTime, $endTime) {
-        $stmt = $this->pdo->prepare("SELECT id, severity, start_lat, start_lng, city, state, weather_condition 
+        $stmt = $this->pdo->prepare("SELECT id, severity, start_lat, start_lng, city, state, weather_condition, start_time 
             FROM accidents WHERE start_time >= :start_time AND end_time <= :end_time");
         
         
@@ -21,7 +21,7 @@ class AccidentsModel {
 
     public function ComplexAccidentQuery($startTime, $endTime, $state, $severity, $weather) {
         
-        $query = "SELECT id, severity, start_lat, start_lng, city, state, weather_condition 
+        $query = "SELECT id, severity, start_lat, start_lng, city, state, weather_condition, start_time
                   FROM accidents WHERE start_time >= :start_time AND end_time <= :end_time";
         
         $params = [

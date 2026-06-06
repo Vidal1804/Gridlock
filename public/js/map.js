@@ -32,7 +32,8 @@ filterForm.addEventListener('submit', function(event) {
                     marker.bindPopup(`
                         <strong>City:</strong> ${accident.city || 'Unknown'}<br>
                         <strong>Severity:</strong> ${accident.severity}<br>
-                        <strong>Weather:</strong> ${accident.weather_condition}
+                        <strong>Weather:</strong> ${accident.weather_condition}<br>
+                        <strong>Date:</strong> ${accident.start_time}
                     `);
 
                     markersLayer.addLayer(marker);
