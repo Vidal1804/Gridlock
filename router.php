@@ -52,6 +52,6 @@ switch ($cleanPath) {
 
     default:
         http_response_code(404);
-        echo "<h1>404 Not Found</h1>";
+        require_once __DIR__ . '/views/NotFound.php';
         break;
 }
