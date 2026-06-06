@@ -500,6 +500,7 @@ input:checked + .slider:before { transform: translateX(22px); }
         text-align: center; 
         font-size: 1.3rem; 
         margin-bottom: 2px;
+        margin-top: 10px;
         
     }
 
@@ -509,6 +510,8 @@ input:checked + .slider:before { transform: translateX(22px); }
         text-align: center; 
         font-size: 1.3rem; 
         margin-bottom: 2px;
+        margin-top: 10px;
+
         
     }
 
