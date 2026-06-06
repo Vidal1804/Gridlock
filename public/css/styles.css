@@ -406,14 +406,26 @@ input:checked + .slider:before { transform: translateX(22px); }
     display: none;
 }
 
+.start-page {
+    background-image:
+}
+
 
 /* Phone version !!! */
 
 @media (max-width: 992px) {
 
+    .info-section {
+        justify-content: initial;
+        margin-top: 80px;
+        height: auto;
+    }
+
     .admin-buttons {
         gap: 10px;
     }
+
+    .start-page
 
     .hide-on-mobile {
         display: none;
