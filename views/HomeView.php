@@ -15,15 +15,9 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
     <link rel="stylesheet" href="/public/css/styles.css">
     
 </head>
-<body>
+<body class="home-page">
 
-<!-- Am schimbat aici in POST request ca sa fie secure-->
-    <header class="top-nav">
-    <form method="post" action="/logout" style="margin: 0;">
-        <input type="submit" value="Log out" class="nav-btn primary-btn">
-    </form>
-    </header>
-
+    <?php include "Navigation.php" ?>
 
     <main class="info-section">
         <h1 class="info-title">Welcome, <?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8');?>!</h1>

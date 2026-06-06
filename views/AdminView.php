@@ -11,7 +11,7 @@
     <div class="dashboard-container">
         <div style="display:flex; flex-direction: column; align-items: center; width: 100%">
             <h1>User list</h1>
-            <div id="userlist" class="user-list">
+            <div id="userlist" class="user-list" style="gap: 20px;">
                 
             </div>
         </div>

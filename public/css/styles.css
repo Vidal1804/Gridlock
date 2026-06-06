@@ -42,8 +42,8 @@ body.light-mode {
     width: 100%;
     padding: 20px 40px;
     display: flex;
-    justify-content: flex-end;
     gap: 15px;
+    justify-content: flex-end;
 }
 
 .footer-style {
@@ -172,6 +172,33 @@ input[type="password"] {
     min-height: 100vh;
 }
 
+.nav-bar-div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.home-page {
+    min-height: 100vh;
+}
+
+.home-page .top-nav  {
+    position: sticky;
+    top: 0;
+    right: auto;
+    width: 100%;
+    padding: 15px 40px;
+    align-items: center;
+    z-index: 1001;
+    justify-content: initial;
+}
+
+.home-page .nav-user {
+    font-weight: 600;
+    font-size: 25px;
+    color: var(--text-main);
+}
+
 
 .dashboard-page .top-nav {
     position: sticky;
@@ -183,13 +210,13 @@ input[type="password"] {
     padding: 15px 40px;
     align-items: center;
     z-index: 1001;
+    justify-content: initial;
 }
 
 .dashboard-page .nav-user {
     font-weight: 600;
     font-size: 25px;
     color: var(--text-main);
-    margin-right: auto; 
 }
 
 .user-list {
@@ -202,6 +229,7 @@ input[type="password"] {
     padding: 15px 20px;
     box-sizing: border-box;
 }
+
 
 
 .dashboard-container {
@@ -364,19 +392,43 @@ input:checked + .slider:before { transform: translateX(22px); }
     
 }
 
+.admin-buttons {
+    gap: 20px;
+}
+
 .hidden-box.hide {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
 }
 
+.show-on-mobile {
+    display: none;
+}
+
 
 /* Phone version !!! */
 
 @media (max-width: 992px) {
+
+    .admin-buttons {
+        gap: 10px;
+    }
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .show-on-mobile {
+        display: block;
+    }
     
     .dashboard-container {
         flex-direction: column; 
+    }
+
+    .nav-bar-div {
+        flex-direction: column;
     }
     
     .control-panel {
@@ -425,7 +477,23 @@ input:checked + .slider:before { transform: translateX(22px); }
         gap: 5px;
     }
 
+    .home-page .top-nav {
+        padding: 8px 10px;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 5px;
+    }
+
     .dashboard-page .nav-user {
+        margin-right: 0; 
+        width: 100%; 
+        text-align: center; 
+        font-size: 1.3rem; 
+        margin-bottom: 2px;
+        
+    }
+
+    .home-page .nav-user {
         margin-right: 0; 
         width: 100%; 
         text-align: center; 
