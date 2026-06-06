@@ -21,7 +21,7 @@ class AccountsModel {
     }
 
     public function getAllUsers(){
-        $stmt = $this->pdo->prepare("SELECT * FROM safe_accounts");
+        $stmt = $this->pdo->prepare("SELECT * FROM users");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

@@ -12,7 +12,7 @@ async function initialLoad(){
         const accidentCard = document.createElement('div');
         accidentCard.className = "accident-card";
         accidentCard.innerHTML = `
-            <p>${index} - Accident ID: ${accident.id}</p>
+            <p>${index} - Accident ID: ${accident.id} happened in ${accident.city}, ${accident.state}</p>
         `;
         list.appendChild(accidentCard);
         index = index + 1;
