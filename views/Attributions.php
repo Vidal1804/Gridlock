@@ -10,12 +10,13 @@
 
 <body class="home-page">
     <?php include "Navigation.php" ?>
+    <h1 style="margin: 30px">Resources Used:</h1>
     <div class="attribute-container">
         <a href="https://www.flaticon.com/free-icons/dashboard" title="dashboard icons">Dashboard icons created by Pixel perfect - Flaticon</a>
         <a href="https://www.flaticon.com/free-icons/list" title="list icons">List icons created by Chanut - Flaticon</a>
         <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik - Flaticon</a>
         <a href="https://www.flaticon.com/free-icons/logout" title="logout icons">Logout icons created by Pixel perfect - Flaticon</a>
         <a href="https://www.flaticon.com/free-icons/admin" title="admin icons">Admin icons created by Freepik - Flaticon</a>
-</div>
-    
+    </div>
+    <?php include 'Footer.php' ?>
 </body>

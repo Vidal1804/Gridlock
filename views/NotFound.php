@@ -12,4 +12,5 @@
         <h1>The page you are looking for does not exist.</h1>
         <a href="/start"><button class="primary-btn nav-btn">Back to Start</button></a>
     </main>
+    <?php include 'Footer.php' ?>
 </body>

@@ -27,6 +27,6 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
             <a href="/dashboard"><button class="nav-btn primary-btn">All Accidents</button></a>
         </div>
     </main>
-
+    <?php include 'Footer.php' ?>
 </body>
 </html>

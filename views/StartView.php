@@ -18,6 +18,6 @@
             <a href="/register"><button class="primary-btn nav-btn">Register</button></a>
         </div>
     </main>
-
+    <?php include 'Footer.php' ?>
 </body>
 </html>

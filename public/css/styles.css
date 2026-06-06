@@ -55,6 +55,7 @@ body.light-mode {
     padding: 20px 40px;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 15px;
     background-color: var(--card-bg);
     border-top: 1px solid var(--border-color);
@@ -413,12 +414,20 @@ input:checked + .slider:before { transform: translateX(22px); }
 }
 
 .attribute-container {
+    display: flex;
+    flex-direction: column;
     margin: 40px;
     padding: 20px;
     background-color: var(--card-bg);
     border: solid 2px var(--border-color);
     max-width: 100%;
     min-height: 20vh;
+    gap: 10px;
+}
+
+.attribute-container a {
+    color: white;
+    text-decoration: none;
 }
 
 .nav-buttons {
@@ -457,10 +466,21 @@ input:checked + .slider:before { transform: translateX(22px); }
     margin-right: 0px;
 }
 
+.scrollable-box {
+    overflow: scroll;
+    max-height: 780px;
+    width: 100%;
+}
+
+
 
 /* Phone version !!! */
 
 @media (max-width: 992px) {
+
+    .scrollable-box {
+        max-height: 600px;
+    }
 
     .info-section {
         justify-content: initial;
