@@ -425,8 +425,6 @@ input:checked + .slider:before { transform: translateX(22px); }
         gap: 10px;
     }
 
-    .start-page
-
     .hide-on-mobile {
         display: none;
     }
