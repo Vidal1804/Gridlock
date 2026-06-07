@@ -28,9 +28,9 @@ async function initialLoad(){
         accidentCard.innerHTML = `
            <div style="display: flex; flex-direction: column;">
            <h2 style="margin: 0;">[${accident.id}] ${accident.city}, ${accident.state}</h2>
-           <p style="margin-bottom: 0; font-size: 20px; margin-top: 5px; margin-left: 20px;">Accident Time: ${accident.start_time}</p>
-           <p style="margin-bottom: 0; font-size: 20px; margin-top: 5px; margin-left: 20px;">Weather Condition: ${accident.weather_condition}</p>
-           <p style="margin-bottom: 0; font-size: 20px; margin-top: 5px; margin-left: 20px;">Accident Time: ${accident.severity}</p>
+           <p style="margin-bottom: 0; font-size: 16px; margin-top: 5px; margin-left: 20px;">Accident Time: ${accident.start_time}</p>
+           <p style="margin-bottom: 0; font-size: 16px; margin-top: 5px; margin-left: 20px;">Weather Condition: ${accident.weather_condition}</p>
+           <p style="margin-bottom: 0; font-size: 16px; margin-top: 5px; margin-left: 20px;">Accident Time: ${accident.severity}</p>
            </div>
            <a href="https://www.openstreetmap.org/search?lat=${accident.start_lat}&lon=${accident.start_lng}&zoom=10" target="_blank" rel="noopener noreferrer"><button class="primary-btn nav-btn" style="margin-right: 20px;">Open in Maps</button></a>
         `;
@@ -70,9 +70,9 @@ filterForm.addEventListener('submit', function(event) {
                 accidentCard.innerHTML = `
                 <div style="display: flex; flex-direction: column;">
                 <h2 style="margin: 0;">[${accident.id}] ${accident.city}, ${accident.state}</h2>
-                <p style="margin-bottom: 0; font-size: 20px; margin-top: 5px; margin-left: 20px;">Accident Time: ${accident.start_time}</p>
-                <p style="margin-bottom: 0; font-size: 20px; margin-top: 5px; margin-left: 20px;">Weather Condition: ${accident.weather_condition}</p>
-                <p style="margin-bottom: 0; font-size: 20px; margin-top: 5px; margin-left: 20px;">Accident Time: ${accident.severity}</p>
+                <p style="margin-bottom: 0; font-size: 16px; margin-top: 5px; margin-left: 20px;">Accident Time: ${accident.start_time}</p>
+                <p style="margin-bottom: 0; font-size: 16px; margin-top: 5px; margin-left: 20px;">Weather Condition: ${accident.weather_condition}</p>
+                <p style="margin-bottom: 0; font-size: 16px; margin-top: 5px; margin-left: 20px;">Accident Time: ${accident.severity}</p>
                 </div>
                 <a href="https://www.openstreetmap.org/search?lat=${accident.start_lat}&lon=${accident.start_lng}&zoom=10" target="_blank" rel="noopener noreferrer"><button class="primary-btn nav-btn" style="margin-right: 20px;">Open in Maps</button></a>
                 `;
@@ -182,11 +182,11 @@ async function customLoad(queryString){
                 accidentCard.innerHTML = `
                 <div style="display: flex; flex-direction: column;">
                 <h2 style="margin: 0;">[${accident.id}] ${accident.city}, ${accident.state}</h2>
-                <p style="margin-bottom: 0; font-size: 20px; margin-top: 5px; margin-left: 20px;">Accident Time: ${accident.start_time}</p>
-                <p style="margin-bottom: 0; font-size: 20px; margin-top: 5px; margin-left: 20px;">Weather Condition: ${accident.weather_condition}</p>
-                <p style="margin-bottom: 0; font-size: 20px; margin-top: 5px; margin-left: 20px;">Accident Time: ${accident.severity}</p>
+                <p style="margin-bottom: 0; font-size: 16px; margin-top: 5px; margin-left: 20px;">Accident Time: ${accident.start_time}</p>
+                <p style="margin-bottom: 0; font-size: 16px; margin-top: 5px; margin-left: 20px;">Weather Condition: ${accident.weather_condition}</p>
+                <p style="margin-bottom: 0; font-size: 16px; margin-top: 5px; margin-left: 20px;">Accident Time: ${accident.severity}</p>
                 </div>
-                <a href="https://www.openstreetmap.org/search?lat=${accident.start_lat}&lon=${accident.start_lng}&zoom=10" target="_blank" rel="noopener noreferrer"><button class="primary-btn nav-btn" style="margin-right: 20px;">Open in Maps</button></a>
+                <a style="margin-left: 10px;" href="https://www.openstreetmap.org/search?lat=${accident.start_lat}&lon=${accident.start_lng}&zoom=10" target="_blank" rel="noopener noreferrer"><button class="primary-btn nav-btn" style="margin-right: 20px;">Open in Maps</button></a>
                 `;
 
                 list.appendChild(accidentCard);

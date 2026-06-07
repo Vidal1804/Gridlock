@@ -411,6 +411,7 @@ input[type="password"] {
 input:checked + .slider { background-color: #ef4444; }
 input:checked + .slider:before { transform: translateX(22px); }
 
+
 .hidden-box {
     margin-top: 0;
     transition: max-height 0.6s ease-in-out, opacity 0.4s ease-in-out, margin 0.4s ease-in-out;
