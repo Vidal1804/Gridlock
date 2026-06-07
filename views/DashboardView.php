@@ -139,9 +139,10 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
                     </label>
                 </div>
             <div id="export-container" class="hidden-box hide">
-                <button style="margin-bottom: 10px" type="button" id="export-csv" class="nav-btn primary-btn full-width">Export CSV</button>
                 <button style="margin-bottom: 10px" type="button" id="export-webp" class="nav-btn primary-btn full-width">Export WebP</button>
-                <button style="margin-bottom: 10px" type="button" id="export-svg" class="nav-btn primary-btn full-width">Export SVG</button>
+                <button style="margin-bottom: 10px" type="button" id="export-svg-btn" class="nav-btn primary-btn full-width">Export SVG</button>
+                <button style="margin-bottom: 10px" type="button" id="save-query-btn" class="nav-btn primary-btn full-width">Save Query</button>
+
             </div>
 
         </aside>
@@ -151,6 +152,9 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
                 <h3>Geographic Map</h3>
                 <div id="map"></div>
                 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+                <script>
+                    const currentUserId = <?php echo json_encode($_SESSION['user_id'] ?? null); ?>;
+                </script>
                 <script src="/public/js/map.js"></script>
             </div>
 

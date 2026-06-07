@@ -35,6 +35,6 @@ try {
 
     echo json_encode(['success' => true]);
 } catch (Exception $e) {
-    http_response_code(500); // Internal Server Error
-    echo json_encode(['success' => false, 'message' => 'Failed to delete user.']);
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Failed to change user\'s role.']);
 }

@@ -28,7 +28,7 @@ async function loadUsers(){
             if(user.role === 'admin') userrole = "Demote";
             // Inject user info and an action button
             userCard.innerHTML = `
-                <p><strong>${user.username}</strong></p>
+                <p>[${user.id}] <strong>${user.username}:= </strong> ${user.role}</p>
                 <div  style="display: flex;" class="admin-buttons">
                     <button class="primary-btn nav-btn promote-btn">${userrole}</button>
                     <button class="primary-btn nav-btn delete-btn">Delete</button>

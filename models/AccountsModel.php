@@ -46,4 +46,20 @@ class AccountsModel {
         $stmt = $this->pdo->prepare("UPDATE users SET role = :role WHERE id = :id");
         $stmt->execute(['role' => $role, 'id' => $id]);
     }
+
+    public function saveQuery($id, $queryString){
+        $stmt = $this->pdo->prepare("INSERT INTO saved_queries (user_id, query_string) VALUES (:id, :query_string)");
+        return $stmt->execute(['id' => $id, 'query_string' => $queryString]);
+    }
+
+    public function deleteQuery($id){
+        $stmt = $this->pdo->prepare("DELETE FROM saved_queries WHERE id = :id");
+        return $stmt->execute(['id' => $id]);
+    }
+
+    public function getAllUserQueries($id){
+        $stmt = $this->pdo->prepare("SELECT id, query_string FROM saved_queries WHERE user_id = :user_id");
+        $stmt->execute(['user_id' => $id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

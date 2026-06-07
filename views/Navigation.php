@@ -4,6 +4,8 @@ if(isset($_SESSION['role'])){
     $bool = $_SESSION['role'] === 'admin';
 }
 $username = isset($_SESSION['user_id']) ? $_SESSION['username'] : "Error";
+
+$current_page = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +16,9 @@ $username = isset($_SESSION['user_id']) ? $_SESSION['username'] : "Error";
         <div style="display: flex; gap: 10px" class="nav-buttons">
         <hr class="hide-on-mobile" style="margin-right: 10px;">
         <?php
-            $location = '/dashboard';
-            $name = 'Dashboard';
-            $image = '/public/resources/dashboard.png';
+            $location = '/map';
+            $name = 'Map';
+            $image = '/public/resources/location.png';
             include "Button.php";
         ?>
         <?php

@@ -127,9 +127,8 @@
                     </label>
                 </div>
             <div id="export-container" class="hidden-box hide">
-                <button style="margin-bottom: 10px" type="button" id="export-csv" class="nav-btn primary-btn full-width">Export CSV</button>
-                <button style="margin-bottom: 10px" type="button" id="export-webp" class="nav-btn primary-btn full-width">Export WebP</button>
-                <button style="margin-bottom: 10px" type="button" id="export-svg" class="nav-btn primary-btn full-width">Export SVG</button>
+                <button style="margin-bottom: 10px" type="button" id="export-csv-btn" class="nav-btn primary-btn full-width">Export CSV</button>
+                <button style="margin-bottom: 10px" type="button" id="save-query-btn" class="nav-btn primary-btn full-width">Save Query</button>
             </div>
 
         </aside>
@@ -138,11 +137,15 @@
             <div class="visual-card map-card">
                 <h3>List View of Accidents</h3>
                 <div id="accident_list" class="scrollable-box">
+                    <h1>Loading...</h1>
                 </div>
             </div>
         </section>
     </div>
     <script src="/public/js/dashboard-toggle.js"></script>
+    <script>
+        const currentUserId = <?php echo json_encode($_SESSION['user_id'] ?? null); ?>;
+    </script>
     <script src="/public/js/list.js"></script>
     <?php include 'Footer.php' ?>
 </body>
