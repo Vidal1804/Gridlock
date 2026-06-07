@@ -180,7 +180,7 @@ async function customLoad(queryString){
                 accidentCard.style.alignItems = 'center';
                 accidentCard.style.justifyContent = 'space-between';
                 accidentCard.innerHTML = `
-                <div style="display: flex; flex-direction: column;">
+                <div style="display: flex; flex-direction: column; margin-right: 10px;">
                 <h2 style="margin: 0;">[${accident.id}] ${accident.city}, ${accident.state}</h2>
                 <p style="margin-bottom: 0; font-size: 16px; margin-top: 5px; margin-left: 20px;">Accident Time: ${accident.start_time}</p>
                 <p style="margin-bottom: 0; font-size: 16px; margin-top: 5px; margin-left: 20px;">Weather Condition: ${accident.weather_condition}</p>
