@@ -9,5 +9,5 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
         header("Location: /start");
         exit();
     }
-    require_once __DIR__ . '/../views/HomeView.php';
+    require_once __DIR__ . '/../views/ListView.php';
 }

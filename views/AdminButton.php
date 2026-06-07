@@ -1,0 +1,1 @@
+<a href="/admin"><button class="primary-btn nav-btn">Admin</button></a>

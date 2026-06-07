@@ -11,12 +11,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $name = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS) ?? '';
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL) ?? '';
     $pass = $_POST['password'] ?? '';
+    $confirm_pass = $_POST['confirm_pass'] ?? '';
 
-    if(!empty($name) && !empty($email) && !empty($pass)){
+    if(!empty($name) && !empty($email) && !empty($pass) && !empty($confirm_pass)){
         $model = new AccountsModel($pdo);
         $user = $model->findUserByUsername($name);
         if(!$user){
             $hashedPass = password_hash($pass, PASSWORD_DEFAULT);
+            if($pass != $confirm_pass){
+                header("Location: /register?error=passwords_dont_match");
+                exit();
+            }
             if($model->registerUser($name, $email, $hashedPass)){
                 header("Location: /login");
                 exit();

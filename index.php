@@ -1,2 +1,5 @@
 <?php
-require_once 'views/StartView.php';
+
+if($_SERVER['REQUEST_METHOD'] === "GET"){
+    header("Location: /start");
+}

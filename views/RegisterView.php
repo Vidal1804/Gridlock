@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
-    <link rel="icon" href="../favicon.ico">
-    <link rel="stylesheet" href="/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/public/resources/favicon.ico">
+    <link rel="stylesheet" href="/public/css/styles.css">
 </head>
 <body>
 
@@ -15,6 +16,7 @@
                 Name: <input type="text" name="username">
                 Email: <input type="email" name="email">
                 Password: <input type="password" name="password">
+                Confirm Password: <input type="password" name="confirm_pass">
                 <input type="submit" name="Submit" value="Sign up" class="nav-btn primary-btn full-width">
             </form>
 

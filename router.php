@@ -32,9 +32,46 @@ switch ($cleanPath) {
 
     case '/start':
         require_once __DIR__ . '/controllers/StartController.php';
+        break;
+
+    case '/dashboard':
+        require_once __DIR__ . '/controllers/DashboardController.php';
+        break;
+        
+    case '/api/accidents':
+        require_once __DIR__ . '/controllers/AccidentsController.php';
+        break;  
+        
+    case '/api/users':
+        require_once __DIR__ . '/controllers/GetAllAccounts.php';
+        break;
+        
+    case '/admin':
+        require_once __DIR__ . '/controllers/AdminController.php';
+        break;
+
+    case '/attributes':
+        require_once __DIR__ . '/views/Attributions.php';
+        break;
+
+    case '/list':
+        require_once __DIR__ . '/controllers/ListController.php';
+        break;
+
+    case '/profile':
+        require_once __DIR__ . '/controllers/ProfileController.php';
+        break;
+    case '/api/users/changerole':
+        require_once __DIR__ . '/controllers/Users/ChangeRole.php';
+        break;
+
+    case '/api/users/deleteuser':
+        require_once __DIR__ . '/controllers/Users/DeleteUser.php';
+        break;
+
 
     default:
         http_response_code(404);
-        echo "<h1>404 Not Found</h1>";
+        require_once __DIR__ . '/views/NotFound.php';
         break;
 }
