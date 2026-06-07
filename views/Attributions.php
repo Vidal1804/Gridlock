@@ -9,7 +9,11 @@
 </head>
 
 <body class="home-page">
-    <?php include "Navigation.php" ?>
+
+    <header class="top-nav"> 
+    <a href="/home" class="nav-user" style="display: flex; align-items: center; justify-content: center;"><img src="/public/resources/gridlock.png" style="width:200px; height: 31px;"></a>
+    </header>
+    <main class="main-class">
     <h1 style="margin: 30px">Resources Used:</h1>
     <div class="attribute-container">
         <a href="https://www.flaticon.com/free-icons/dashboard" title="dashboard icons">Dashboard icons created by Pixel perfect - Flaticon</a>
@@ -18,5 +22,6 @@
         <a href="https://www.flaticon.com/free-icons/logout" title="logout icons">Logout icons created by Pixel perfect - Flaticon</a>
         <a href="https://www.flaticon.com/free-icons/admin" title="admin icons">Admin icons created by Freepik - Flaticon</a>
     </div>
+    </main>
     <?php include 'Footer.php' ?>
 </body>

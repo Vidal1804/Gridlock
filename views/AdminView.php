@@ -16,6 +16,9 @@
             </div>
         </div>
     </div>
+    <script>
+        const currentUserId = <?php echo json_encode($_SESSION['user_id'] ?? null); ?>;
+    </script>
     <script src="/public/js/admin.js"></script>
     <?php include 'Footer.php' ?>
 </body> 

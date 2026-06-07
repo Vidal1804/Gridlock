@@ -33,6 +33,10 @@ body.light-mode {
   --btn-bg: #1e293b;
 }
 
+.main-class {
+    flex: 1;
+}
+
 
 
 /* Navigarea */
@@ -98,7 +102,7 @@ body.light-mode {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
     padding: 20px;
 }
@@ -181,8 +185,16 @@ input[type="password"] {
     gap: 10px;
 }
 
+.start-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .home-page {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .home-page .top-nav  {
@@ -477,6 +489,13 @@ input:checked + .slider:before { transform: translateX(22px); }
 /* Phone version !!! */
 
 @media (max-width: 992px) {
+
+    .nav-button-container:hover .nav-text {
+        max-width: 0px;
+        opacity: 0;
+        margin-left: 0px;
+        margin-right: 0px;
+    }   
 
     .scrollable-box {
         max-height: 600px;

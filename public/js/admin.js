@@ -2,6 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
     loadUsers();
 })
 
+
 async function loadUsers(){
     console.log("Loading users...");
     try {
@@ -10,6 +11,11 @@ async function loadUsers(){
         const users = await response.json();
         userlist.innerHTML = ``;
         users.forEach(user =>{
+
+            if(user.id == currentUserId){
+                return;
+            }
+
             const userCard = document.createElement('div');
             userCard.className = 'user-item';
             userCard.style.display = 'flex';
@@ -39,7 +45,7 @@ async function loadUsers(){
             const deleteBtn = userCard.querySelector('.delete-btn');
             deleteBtn.addEventListener('click', async () => {
                 if(confirm('Are you sure you want to delete ' + user.username)) {
-                    await handleUserAction(`/api/users/changerole`, user.id, userCard, loadUsers);
+                    await handleUserAction(`/api/users/deleteuser`, user.id, userCard, loadUsers);
                 }
             });
 
@@ -52,7 +58,23 @@ async function loadUsers(){
 
 async function handleUserAction(endpoint, userId, card, callback){
     console.log("Action " + endpoint + " handled for " + userId);
-    if(typeof callback === 'function'){
-        await callback();
+    try {
+        const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id: userId })
+        });
+        const result = await response.json();
+        if (response.ok && result.success) {
+            if(typeof callback === 'function'){
+                await callback();
+            }
+        } else {
+            alert(result.message || "Something went wrong.");
+        }
+    } catch (error) {
+        console.error("API Error:", error);
     }
 }

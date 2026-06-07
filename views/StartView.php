@@ -9,7 +9,7 @@
 </head>
 <body class="start-page">
 
-    <main class="info-section">
+    <main class="info-section main-class">
         <h1 class="info-title">Welcome to</h1>
         <img src="/public/resources/gridlock.png" style="max-width: 100%; margin-bottom: 20px">
         <p class="info-subtitle">Interactive accident visualizer and traffic analysis platform.</p>

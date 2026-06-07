@@ -61,6 +61,14 @@ switch ($cleanPath) {
     case '/profile':
         require_once __DIR__ . '/controllers/ProfileController.php';
         break;
+    case '/api/users/changerole':
+        require_once __DIR__ . '/controllers/Users/ChangeRole.php';
+        break;
+
+    case '/api/users/deleteuser':
+        require_once __DIR__ . '/controllers/Users/DeleteUser.php';
+        break;
+
 
     default:
         http_response_code(404);
