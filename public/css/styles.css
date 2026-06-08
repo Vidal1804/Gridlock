@@ -69,6 +69,12 @@ body.light-mode .top-nav img {
     border-top: 1px solid var(--border-color);
 }
 
+.footer-link {
+    text-decoration: none;
+    color: var(--text-main);
+    margin: 0;
+}
+
 .nav-btn {
     text-decoration: none;
     color: var(--text-main);
