@@ -13,6 +13,8 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
     <title>Dashboard - Gridlock</title>
     <link rel="icon" href="/public/resources/favicon.ico">
     <link rel="stylesheet" href="/public/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body class="dashboard-page">
@@ -160,21 +162,25 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
 
             <div class="stats-grid">
                 <div class="visual-card">
-                    <h3>Timeline Analysis</h3>
-                    <div id="chart-timeline" class="placeholder-box">
-                        <p class="info-subtitle">chart 1 wip</p>
+                    <h3>Timeline Analysis 
+                        <button type="button" id="toggleTimelineBtn" class="nav-btn toggle-btn">Show by Month</button>
+                    </h3>
+                    <div class="chart-container">
+                        <canvas id="timelineChart"></canvas>
                     </div>
                 </div>
+
                 <div class="visual-card">
                     <h3>Distribution by State</h3>
-                    <div id="chart-pie" class="placeholder-box">
-                        <p class="info-subtitle">chart 2 wip</p>
+                    <div class="chart-container">
+                        <canvas id="stateChart"></canvas>
                     </div>
                 </div>
+
                 <div class="visual-card">
-                    <h3>Metric Matrix</h3>
-                    <div id="chart-matrix" class="placeholder-box">
-                        <p class="info-subtitle">chart 3 wip</p>
+                    <h3>Weather Analysis</h3>
+                    <div class="chart-container">
+                        <canvas id="weatherChart"></canvas>
                     </div>
                 </div>
             </div>
