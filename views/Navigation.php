@@ -41,12 +41,14 @@ $current_page = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
             include 'Button.php';
         }
         ?>
-        <label class="switch" style="margin-top: 5px; margin-left: 15px;">
-                <input type="checkbox" id="themeToggleBtn">
-                <span class="slider"></span>
-            </label>
-        </div> 
+        
+        </div>
 
+        <label class="switch" style="margin-top: 5px; margin-left: 15px;">
+            <input type="checkbox" id="themeToggleBtn">
+            <span class="slider"></span>
+        </label>
+        
         <a class="nav-button-container">
             <img src="/public/resources/logout.png" style="max-width: 20px; max-height: 20px">
             <form method="post" action="/logout" style="display: inline-flex; margin: 0; right: 0;">

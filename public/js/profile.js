@@ -11,13 +11,6 @@ async function initialLoad(){
     queries.forEach(query => {
         const queryCard = document.createElement('div');
         queryCard.className = "query-card";
-        queryCard.style.display = 'flex';
-        queryCard.style.backgroundColor = '#111111';
-        queryCard.style.border = 'solid 2px #2e2e2e';
-        queryCard.style.borderRadius = '15px';
-        queryCard.style.padding = '15px';
-        queryCard.style.alignItems = 'center';
-        queryCard.style.justifyContent = 'space-between';
 
         const params = new URLSearchParams(query.query_string);
         
