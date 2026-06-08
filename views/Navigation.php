@@ -41,6 +41,10 @@ $current_page = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
             include 'Button.php';
         }
         ?>
+        <label class="switch" style="margin-top: 5px; margin-left: 15px;">
+                <input type="checkbox" id="themeToggleBtn">
+                <span class="slider"></span>
+            </label>
         </div> 
 
         <a class="nav-button-container">
@@ -50,5 +54,5 @@ $current_page = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
             </form>
         </a>
         </div>
-        
+        <script src="/public/js/theme.js"></script>
 </header>

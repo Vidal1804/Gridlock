@@ -33,6 +33,10 @@ body.light-mode {
   --btn-bg: #1e293b;
 }
 
+body.light-mode .top-nav img {
+    filter: invert(1) hue-rotate(180deg) brightness(0.80) saturate(2); 
+}
+
 .main-class {
     flex: 1;
 }
@@ -370,6 +374,18 @@ input[type="password"] {
     padding: 20px;
     min-height: 180px;
     text-align: center;
+}
+
+.chart-container {
+    position: relative;
+    height: 250px;
+    width: 100%;
+}
+
+.toggle-btn {
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    float: right;
 }
 
 #map {
