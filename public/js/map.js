@@ -6,6 +6,15 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     maxZoom: 20
 }).addTo(map);
 
+window.addEventListener('DOMContentLoaded', () =>{
+    if (window.location.search) {
+        const queryString = window.location.search.substring(1);
+        LoadData(queryString);
+        populateFormFromQuery(queryString);
+    }
+})
+
+
 let globalQueryString = "";
 const markersLayer = L.layerGroup().addTo(map);
 
@@ -47,14 +56,7 @@ filterForm.addEventListener('submit', function(event) {
         .catch(error => console.error('Eroare la aducerea accidentelor:', error));
 });
 
-window.addEventListener('DOMContentLoaded', () =>{
-    if (window.location.search) {
-        const queryString = window.location.search.substring(1);
-        customLoad(queryString);
-        populateFormFromQuery(queryString);
-        history.replaceState(null, '', window.location.pathname);
-    }
-})
+
 
 document.getElementById('save-query-btn').addEventListener('click', async () => {
     const dataToSend = {
@@ -84,7 +86,7 @@ document.getElementById('save-query-btn').addEventListener('click', async () => 
     }
 });
 
-async function customLoad(queryString){
+async function LoadData(queryString){
     markersLayer.clearLayers();
     fetch(`/api/accidents?${queryString}`)
         .then(response => response.json()) 
@@ -128,5 +130,15 @@ function populateFormFromQuery(queryString) {
             }
         }
     });
+}
+
+function createDownload(content, filename, contentType) {
+    const fileData = new Blob([content], { type: contentType });
+    const url = URL.createObjectURL(fileData);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
 }
 

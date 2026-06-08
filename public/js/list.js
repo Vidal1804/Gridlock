@@ -5,7 +5,6 @@ window.addEventListener('DOMContentLoaded', () =>{
         const queryString = window.location.search.substring(1);
         customLoad(queryString);
         populateFormFromQuery(queryString);
-        history.replaceState(null, '', window.location.pathname);
     }
     else initialLoad();
 })
