@@ -41,10 +41,14 @@ $current_page = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
             include 'Button.php';
         }
         ?>
-        <label class="switch" style="margin-top: 5px; margin-left: 15px;">
-            <input type="checkbox" id="themeToggleBtn">
-            <span class="slider"></span>
-        </label>
+        <button id="themeToggleBtn" class="theme-toggle-btn">
+           <img id="themeIcon" src="/public/resources/moon.png" alt="Toggle Theme">
+        </button>
+        <script>
+          if (localStorage.getItem('theme') === 'light') {
+          document.getElementById('themeIcon').src = '/public/resources/sun.png';
+          }
+        </script>
         </div>
         
         
