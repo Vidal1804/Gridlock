@@ -14,13 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.add('light-mode');
             localStorage.setItem('theme', 'light');
             
-            // ENGLISH FUNCTION NAME
             if (typeof updateMapTheme === 'function') updateMapTheme('light');
         } else {
             body.classList.remove('light-mode');
             localStorage.setItem('theme', 'dark');
             
-            // ENGLISH FUNCTION NAME
             if (typeof updateMapTheme === 'function') updateMapTheme('dark');
         }
     });
