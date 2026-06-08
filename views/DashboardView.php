@@ -14,6 +14,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
     <link rel="icon" href="/public/resources/favicon.ico">
     <link rel="stylesheet" href="/public/css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
@@ -141,7 +142,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
                     </label>
                 </div>
             <div id="export-container" class="hidden-box hide">
-                <button style="margin-bottom: 10px" type="button" id="export-webp" class="nav-btn primary-btn full-width">Export WebP</button>
+                <button style="margin-bottom: 10px" type="button" id="export-webp-btn" class="nav-btn primary-btn full-width">Export WebP</button>
                 <button style="margin-bottom: 10px" type="button" id="export-svg-btn" class="nav-btn primary-btn full-width">Export SVG</button>
                 <button style="margin-bottom: 10px" type="button" id="save-query-btn" class="nav-btn primary-btn full-width">Save Query</button>
 
@@ -154,6 +155,8 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Error';
                 <h3>Geographic Map</h3>
                 <div id="map"></div>
                 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
                 <script>
                     const currentUserId = <?php echo json_encode($_SESSION['user_id'] ?? null); ?>;
                 </script>

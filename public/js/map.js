@@ -20,6 +20,14 @@ updateMapTheme(savedTheme);
 
 let globalQueryString = "";
 const markersLayer = L.layerGroup().addTo(map);
+const heatLayer = L.layerGroup()
+
+const baseMaps = {};
+const overlayMaps = {
+    "Markers": markersLayer,
+    "Heatmap": heatLayer
+};
+L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(map);
 
 const filterForm = document.getElementById('filter-form');
 
@@ -27,6 +35,9 @@ filterForm.addEventListener('submit', function(event) {
     event.preventDefault(); 
 
     markersLayer.clearLayers();
+    heatLayer.clearLayers();
+
+    const heatPoints = [];
 
     const formData = new FormData(filterForm);
     
@@ -50,8 +61,20 @@ filterForm.addEventListener('submit', function(event) {
                     `);
 
                     markersLayer.addLayer(marker);
+                    const intensity = accident.severity ? accident.severity * 0.5 : 1.0; 
+                    heatPoints.push([accident.start_lat, accident.start_lng, intensity]);
                 }
             });
+
+            if (heatPoints.length > 0) {
+                const heatInstance = L.heatLayer(heatPoints, {
+                    radius: 20,
+                    blur: 15,
+                    maxZoom: 15,
+                    max: 0.5
+                });
+                heatLayer.addLayer(heatInstance);
+            }
 
             if(data.length > 0 && data[0].start_lat) {
                 map.setView([data[0].start_lat, data[0].start_lng], 10);
@@ -65,7 +88,6 @@ window.addEventListener('DOMContentLoaded', () =>{
         const queryString = window.location.search.substring(1);
         customLoad(queryString);
         populateFormFromQuery(queryString);
-        history.replaceState(null, '', window.location.pathname);
     }
 })
 
@@ -99,6 +121,9 @@ document.getElementById('save-query-btn').addEventListener('click', async () => 
 
 async function customLoad(queryString){
     markersLayer.clearLayers();
+    heatLayer.clearLayers();
+    const heatPoints = [];
+
     fetch(`/api/accidents?${queryString}`)
         .then(response => response.json()) 
         .then(data => {
@@ -117,8 +142,20 @@ async function customLoad(queryString){
                     `);
 
                     markersLayer.addLayer(marker);
+                    const intensity = accident.severity ? accident.severity * 0.5 : 1.0; 
+                    heatPoints.push([accident.start_lat, accident.start_lng, intensity]);
                 }
             });
+
+            if (heatPoints.length > 0) {
+                const heatInstance = L.heatLayer(heatPoints, {
+                    radius: 20,
+                    blur: 15,
+                    maxZoom: 15,
+                    max: 0.5
+                });
+                heatLayer.addLayer(heatInstance);
+            }
 
             if(data.length > 0 && data[0].start_lat) {
                 map.setView([data[0].start_lat, data[0].start_lng], 10);
@@ -298,3 +335,56 @@ document.addEventListener('click', function(event) {
         drawTimelineChart(lastAccidentsData);
     }
 });
+
+//export jpg
+document.getElementById('export-webp-btn').addEventListener('click', () => {
+    if (!lastAccidentsData.length) return alert("No data available to export.");
+
+    const mapContainer = document.getElementById('map');
+
+    html2canvas(mapContainer, {
+        useCORS: true,
+        allowTaint: false
+    }).then(canvas => {
+        canvas.toBlob(blob => {
+            createDownload(blob, 'map-export.webp');
+        }, 'image/webp', 0.9);
+    }).catch(err => {
+        console.error('Export failed:', err);
+    });
+});
+
+//export svg
+document.getElementById('export-svg-btn').addEventListener('click', () => {
+    if (!lastAccidentsData.length) return alert("No data available to export.");
+
+    const mapContainer = document.getElementById('map');
+
+    html2canvas(mapContainer, {
+        useCORS: true,
+        allowTaint: false
+    }).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const svgString = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="${canvas.width}" height="${canvas.height}">
+                <image href="${imgData}" width="${canvas.width}" height="${canvas.height}" />
+            </svg>
+        `;
+        
+        createDownload(svgString, 'map-export.svg', 'image/svg+xml;charset=utf-8');
+    }).catch(err => {
+        console.error('Export failed:', err);
+    });
+});
+
+//helper download function
+function createDownload(content, filename, contentType) {
+    const fileData = new Blob([content], { type: contentType });
+    const url = URL.createObjectURL(fileData);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+}
+

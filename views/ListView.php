@@ -136,6 +136,7 @@
         <section class="display-panel">
             <div class="visual-card map-card">
                 <h3>List View of Accidents</h3>
+                <div style="margin-bottom: 15px; padding: 10px; max-width:250px;" class="accident-card"><h3 style="margin: 0" id="total-row-count">No query</h3></div>
                 <div id="accident_list" class="scrollable-box">
                     <h1>Loading...</h1>
                 </div>

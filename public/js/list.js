@@ -29,7 +29,9 @@ async function initialLoad(){
 
         list.appendChild(accidentCard);
     });
-
+    const totalCount = accidents.length > 0 ? accidents[0].total_results : 0;
+    const rowCount = document.getElementById('total-row-count');
+    rowCount.innerText = `${totalCount} accidents found`;
 }
 
 const filterForm = document.getElementById('filter-form');
@@ -48,7 +50,7 @@ filterForm.addEventListener('submit', function(event) {
         .then(response => response.json()) 
         .then(data => {
             console.log("Accidente gasite: ", data.length); 
-            
+            const accidents = data;
             data.forEach(accident => {
                 const accidentCard = document.createElement('div');
                 accidentCard.className = "accident-card";
@@ -65,6 +67,9 @@ filterForm.addEventListener('submit', function(event) {
                 list.appendChild(accidentCard);
             });
             currentData = data;
+            const totalCount = accidents.length > 0 ? accidents[0].total_results : 0;
+            const rowCount = document.getElementById('total-row-count');
+            rowCount.innerText = `${totalCount} accidents found`;
         })
         .catch(error => console.error('Eroare la aducerea accidentelor:', error));
 });
@@ -153,7 +158,7 @@ async function customLoad(queryString){
         .then(response => response.json()) 
         .then(data => {
             console.log("Accidente gasite: ", data.length); 
-            
+            const accidents = data;
             data.forEach(accident => {
                 const accidentCard = document.createElement('div');
                 accidentCard.className = "accident-card";
@@ -170,6 +175,9 @@ async function customLoad(queryString){
                 list.appendChild(accidentCard);
             });
             currentData = data;
+            const totalCount = accidents.length > 0 ? accidents[0].total_results : 0;
+            const rowCount = document.getElementById('total-row-count');
+            rowCount.innerText = `${totalCount} accidents found`;
         })
         .catch(error => console.error('Eroare la aducerea accidentelor:', error));
 }
