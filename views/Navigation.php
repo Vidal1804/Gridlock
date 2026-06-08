@@ -52,12 +52,14 @@ $current_page = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         </div>
         
         
-        <a class="nav-button-container">
-            <img src="/public/resources/logout.png" style="max-width: 20px; max-height: 20px">
-            <form method="post" action="/logout" style="display: inline-flex; margin: 0; right: 0;">
-                <input type="submit" class="nav-text" style="cursor: pointer;" value="Log out">
-            </form>
-        </a>
+        <div class="nav-button-container">
+    <form method="post" action="/logout" style="display: inline-flex; margin: 0;">
+        <button type="submit" style="cursor: pointer; background: none; border: none; padding: 0; display: inline-flex; align-items: center;">
+            <img src="/public/resources/logout.png" style="max-width: 20px; max-height: 20px;">
+            <span class="nav-text" style="white-space: nowrap;">Log out</span>
+        </button>
+    </form>
+</div>
         </div>
         <script src="/public/js/theme.js"></script>
 </header>
