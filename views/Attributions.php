@@ -21,6 +21,8 @@
         <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik - Flaticon</a>
         <a href="https://www.flaticon.com/free-icons/logout" title="logout icons">Logout icons created by Pixel perfect - Flaticon</a>
         <a href="https://www.flaticon.com/free-icons/admin" title="admin icons">Admin icons created by Freepik - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/location" title="location icons">Location icons created by Freepik - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/graph" title="graph icons">Graph icons created by Bamicon - Flaticon</a>
     </div>
     </main>
     <?php include 'Footer.php' ?>

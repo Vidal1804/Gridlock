@@ -12,7 +12,7 @@ $jsonRaw = file_get_contents('php://input');
 $data = json_decode($jsonRaw, true);
 $id = $data['id'] ?? null;
 
-if (!isset($_SESSION['role']) || $_SESSION['role'] === 'user') {
+if (!isset($_SESSION['role'])) {
     http_response_code(403);
     echo json_encode(['success' => false, 'message' => 'Unauthorized access.']);
     exit();
@@ -26,10 +26,11 @@ if (!$id) {
 
 try {
     $model = new AccountsModel($pdo);
-    $model->deleteUser($id);
+    $model->deleteQuery($id);
+    
 
     echo json_encode(['success' => true]);
 } catch (Exception $e) {
     http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Failed to delete user.']);
+    echo json_encode(['success' => false, 'message' => 'Failed to save query.']);
 }

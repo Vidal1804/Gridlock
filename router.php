@@ -34,13 +34,17 @@ switch ($cleanPath) {
         require_once __DIR__ . '/controllers/StartController.php';
         break;
 
-    case '/dashboard':
+    case '/map':
         require_once __DIR__ . '/controllers/DashboardController.php';
         break;
         
     case '/api/accidents':
         require_once __DIR__ . '/controllers/AccidentsController.php';
-        break;  
+        break;
+
+    case '/api/accidents/stats':
+        require_once __DIR__ . '/controllers/AccidentsStatsController.php';
+        break;
         
     case '/api/users':
         require_once __DIR__ . '/controllers/GetAllAccounts.php';
@@ -68,7 +72,18 @@ switch ($cleanPath) {
     case '/api/users/deleteuser':
         require_once __DIR__ . '/controllers/Users/DeleteUser.php';
         break;
+    
+    case '/api/users/savequery':
+        require_once __DIR__ . '/controllers/Users/SaveQuery.php';
+        break;
 
+    case '/api/queries':
+        require_once __DIR__ . '/controllers/Users/GetAllQueries.php';
+        break;
+
+    case '/api/users/deletequery':
+        require_once __DIR__ . '/controllers/Users/DeleteQuery.php';
+        break;
 
     default:
         http_response_code(404);

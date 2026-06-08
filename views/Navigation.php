@@ -4,6 +4,8 @@ if(isset($_SESSION['role'])){
     $bool = $_SESSION['role'] === 'admin';
 }
 $username = isset($_SESSION['user_id']) ? $_SESSION['username'] : "Error";
+
+$current_page = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +16,9 @@ $username = isset($_SESSION['user_id']) ? $_SESSION['username'] : "Error";
         <div style="display: flex; gap: 10px" class="nav-buttons">
         <hr class="hide-on-mobile" style="margin-right: 10px;">
         <?php
-            $location = '/dashboard';
-            $name = 'Dashboard';
-            $image = '/public/resources/dashboard.png';
+            $location = '/map';
+            $name = 'Map';
+            $image = '/public/resources/location.png';
             include "Button.php";
         ?>
         <?php
@@ -39,8 +41,17 @@ $username = isset($_SESSION['user_id']) ? $_SESSION['username'] : "Error";
             include 'Button.php';
         }
         ?>
-        </div> 
-
+        <button id="themeToggleBtn" class="theme-toggle-btn">
+           <img id="themeIcon" src="/public/resources/moon.png" alt="Toggle Theme">
+        </button>
+        <script>
+          if (localStorage.getItem('theme') === 'light') {
+          document.getElementById('themeIcon').src = '/public/resources/sun.png';
+          }
+        </script>
+        </div>
+        
+        
         <a class="nav-button-container">
             <img src="/public/resources/logout.png" style="max-width: 20px; max-height: 20px">
             <form method="post" action="/logout" style="display: inline-flex; margin: 0; right: 0;">
@@ -48,5 +59,5 @@ $username = isset($_SESSION['user_id']) ? $_SESSION['username'] : "Error";
             </form>
         </a>
         </div>
-        
+        <script src="/public/js/theme.js"></script>
 </header>
