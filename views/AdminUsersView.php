@@ -9,8 +9,12 @@
 <body class="dashboard-page">
     <?php include 'Navigation.php' ?>
     <div class="dashboard-container">
+        
         <div style="display:flex; flex-direction: column; align-items: center; width: 100%">
-            <h1>User list</h1>
+            <div style="margin-bottom: 30px; margin-top: 10px;">
+                <a href="/admin/users"><button class="primary-btn nav-btn">Users</button></a>
+                <a href="/admin/accidents"><button class="nav-btn">Accidents</button></a>
+            </div>
             <div id="userlist" class="user-list" style="gap: 20px;">
                 
             </div>

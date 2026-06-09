@@ -100,4 +100,22 @@ class AccidentsModel {
             return 0;
         }
     }
+
+    public function importCSV($tmpFilePath) {
+        $tmpFilePath = str_replace('\\', '/', $tmpFilePath); 
+
+        $this->pdo->setAttribute(\PDO::ATTR_EMULATE_PREPARES, true);
+        
+        $query = "LOAD DATA LOCAL INFILE '" . $tmpFilePath . "'
+                INTO TABLE accidents 
+                FIELDS TERMINATED BY ',' 
+                OPTIONALLY ENCLOSED BY '\"' 
+                LINES TERMINATED BY '\n' 
+                IGNORE 1 LINES 
+                (id, severity, start_time, end_time, start_lat, start_lng, distance_mi, city, state, weather_condition)";
+
+        return $this->pdo->query($query) !== false;
+    }
 }
+
+

@@ -11,6 +11,6 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
         header("Location: /start");
         exit();
     } 
-    require_once __DIR__ . '/../views/AdminView.php';
+    require_once __DIR__ . '/../views/AdminAccidentsView.php';
 }
 

@@ -47,11 +47,20 @@ switch ($cleanPath) {
         break;
         
     case '/api/users':
-        require_once __DIR__ . '/controllers/GetAllAccounts.php';
+        require_once __DIR__ . '/controllers/Users/GetAllAccounts.php';
         break;
-        
+
     case '/admin':
-        require_once __DIR__ . '/controllers/AdminController.php';
+        require_once __DIR__ . '/controllers/RedirectAdmin.php';
+        break;
+    case '/admin/users':
+        require_once __DIR__ . '/controllers/AdminUsersController.php';
+        break;
+    case '/admin/accidents':
+        require_once __DIR__ . '/controllers/AdminAccidentsController.php';
+        break;
+    case '/admin/uploadacc':
+        require_once __DIR__ . '/controllers/AddAccidents.php';
         break;
 
     case '/attributes':

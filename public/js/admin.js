@@ -17,18 +17,19 @@ async function loadUsers(){
             }
 
             const userCard = document.createElement('div');
-            userCard.className = 'user-item';
-            userCard.style.display = 'flex';
-            userCard.style.width = '100%';
-            userCard.style.justifyContent = 'space-between';
-            userCard.style.border = 'solid 2px #2d2d2d';
-            userCard.style.borderRadius = '10px';
-            userCard.style.padding = '10px';
+            userCard.className='users-card';
             let userrole = "Promote";
             if(user.role === 'admin') userrole = "Demote";
             // Inject user info and an action button
             userCard.innerHTML = `
-                <p>[${user.id}] <strong>${user.username}:= </strong> ${user.role}</p>
+                <div>
+                <h2 style="margin-bottom: 5px;">[${user.id}] ${user.username}</h2>
+                <hr>
+                <p style="margin: 0; font-size: 20px"><strong>Role:</strong> ${user.role}</p>
+                <p style="margin: 0; font-size: 20px"><strong>Email:</strong> ${maskEmail(user.email)}</p>
+                <hr>
+                </div>
+
                 <div  style="display: flex;" class="admin-buttons">
                     <button class="primary-btn nav-btn promote-btn">${userrole}</button>
                     <button class="primary-btn nav-btn delete-btn">Delete</button>
@@ -77,4 +78,24 @@ async function handleUserAction(endpoint, userId, card, callback){
     } catch (error) {
         console.error("API Error:", error);
     }
+}
+
+function maskEmail(email) {
+    if (!email || !email.includes('@')) {
+        return email;
+    }
+
+    const [local, domain] = email.split('@');
+    const length = local.length;
+    let maskedLocal = '';
+
+    if (length <= 2) {
+        maskedLocal = '*'.repeat(length);
+    } else if (length <= 4) {
+        maskedLocal = local[0] + '*'.repeat(length - 1);
+    } else {
+        maskedLocal = local[0] + '*'.repeat(length - 2) + local[length - 1];
+    }
+
+    return `${maskedLocal}@${domain}`;
 }
